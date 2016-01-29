@@ -1,0 +1,15 @@
+<div class="mg-tagline uk-navbar-content uk-hidden-small">
+  {% if RANDOMQUOTES %}
+  <script>
+  quotes = [
+  {% for quote in RANDOMQUOTES %}
+      "{{ quote|safe }}",
+  {% endfor %}
+  ]
+  
+  index = Math.floor(Math.random() * quotes.length);
+  SITESUB = quotes[index];
+  document.write(SITESUB);
+  </script>
+  {% endif %}
+</div>
