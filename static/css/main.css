@@ -1,18 +1,23 @@
 /* Adding Fonts */
 
 @font-face{
-	font-family:'QuattrocentoSans-Regular';
-	src:url('fonts/QuattrocentoSans-Regular.otf') format('opentype');}
-
-@font-face{
-	font-family:'QuattrocentoSans-BoldItalic';
-	src:url('fonts/QuattrocentoSans-BoldItalic.otf') format('opentype');}
-
+	font-family:'DejaVu Serif';
+	src:url('../fonts/DejaVuSerifCondensed.ttf') format('truetype');}
 
 /* CSS */
 
 html{
-	font: 400 14px / 20px Helvetica,Arial,sans-serif;}
+	font-size: 100%;
+        font-family: "DejaVu Serif",Helvetica,Arial,sans-serif;}
+
+h3{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+em{
+  color: #444;
+}
 
 a{
 	color: #33b5e5;}
@@ -56,10 +61,10 @@ a:hover{
 	color: #444;}
 
 .uk-nav-side > li.uk-active > a{
-	background: #28D1B2;}
+	background: #DC973D;}
 
 .uk-pagination > .uk-active > span{
-	background: #28D1B2;}
+	background: #DC973D;}
 
 .uk-icon-medium{
 	margin-right: 0.3em;}
@@ -94,7 +99,9 @@ a:hover{
 
 .mg-header{
 	padding: 1em 0;
-	background-color: #1f1f58;}
+        background: #1f1f58; /* For browsers that do not support gradients */
+	background: linear-gradient(black, #1f1f58);
+	/*background-color: linear-gradient(rgba(0, 0, 0, 0), rgba(31, 31, 88))*/;}
 
 .mg-brand{
 	font-family: "Open Sans", sans-serif;
