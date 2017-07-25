@@ -21,7 +21,10 @@
 <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{% block description %}{{ DESCRIPTION }}{% endblock %}">
+<!-- IE -->
 <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE }}">
+<!-- other browsers -->
+<link rel="icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE }}" />
 <meta name="author" content="{{ AUTHOR }}">
 <meta name="copyright" content="{{ AUTHOR }}">
 <meta name="twitter:card" content="summary" />
@@ -56,6 +59,9 @@
 <link rel="stylesheet" href="/theme/css/main.css">
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+{% if ISSO_SERVER %}
+  <script data-isso="{{ ISSO_SERVER }}/" src="{{ ISSO_SERVER }}/js/embed.min.js"></script>
+{% endif %}
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -67,7 +73,7 @@
     <div class="uk-container uk-container-center">
         <div class="uk-grid" data-uk-grid-margin>
 
-            <a class="mg-brand uk-navbar-brand uk-hidden-small" href="https://dasfranck.fr/">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
+            <a class="mg-brand uk-navbar-brand uk-hidden-small" href="http://blog.dasfranck.fr/">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
             {% include 'quotes.html' %}
             <a class="uk-navbar-toggle uk-visible-small" href="#mg-offcanvas" data-uk-offcanvas></a>
             <a class="mg-brand uk-navbar-brand uk-navbar-center uk-visible-small" href="https://dasfranck.fr">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
@@ -199,7 +205,6 @@
 <script src="/theme/js/plugins.js"></script>
 <script src="/theme/js/main.js"></script>
 
-{% include 'disqus_count.html' %}
 {% include 'analytics.html' %}
 </body>
 </html>
